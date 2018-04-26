@@ -64,7 +64,7 @@ PanX泛科技 最新文章
 
 ***電影***
 
-![alt tag](https://i.imgur.com/kbqWchl.jpg)
+![alt tag](https://i.imgur.com/DQRUlV8.jpg)
 
 #### 近期上映電影
 
@@ -84,7 +84,7 @@ eyny 電影版包含 Mega 以及 Google 標題的文章
 
 觸電網 ( youtube 預告 )
 
-![alt tag](https://i.imgur.com/EjTfNTO.jpg)
+![alt tag](https://i.imgur.com/FPw95Kf.jpg)
 
 ***看廢文***
 
@@ -131,6 +131,8 @@ eyny 電影版包含 Mega 以及 Google 標題的文章
 如果傳任意貼圖，則會回傳任意有效貼圖 ( 目前我只有把官方 package_id 為 1 的 sticker_id 放在程式碼裡 )，
 
 相關的 sticker_id 以及 package_id 可參考官網的 [sticker_list.pdf](https://developers.line.me/media/messaging-api/sticker_list.pdf)。
+
+![alt tag](https://i.imgur.com/d6yaNBW.jpg)
 
 希望這個 **阿肥bot** 能帶給大家歡樂，程式碼很多基本上就是簡單的爬蟲。
 
