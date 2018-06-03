@@ -508,34 +508,6 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
 
-    buttons_template = TemplateSendMessage(
-        alt_text='目錄 template',
-        template=ButtonsTemplate(
-            title='選擇服務',
-            text='請選擇',
-            thumbnail_image_url='https://i.imgur.com/kzi5kKy.jpg',
-            actions=[
-                MessageTemplateAction(
-                    label='開始玩',
-                    text='開始玩'
-                ),
-                URITemplateAction(
-                    label='影片介紹 阿肥bot',
-                    uri='https://youtu.be/1IxtWgWxtlE'
-                ),
-                URITemplateAction(
-                    label='如何建立自己的 Line Bot',
-                    uri='https://github.com/twtrubiks/line-bot-tutorial'
-                ),
-                URITemplateAction(
-                    label='聯絡作者',
-                    uri='https://www.facebook.com/TWTRubiks?ref=bookmarks'
-                )
-            ]
-        )
-    )
-    line_bot_api.reply_message(event.reply_token, buttons_template)
-
 
 @handler.add(MessageEvent, message=StickerMessage)
 def handle_sticker_message(event):
