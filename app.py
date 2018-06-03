@@ -337,6 +337,20 @@ def handle_message(event):
             line_bot_api.reply_message(
                 event.reply_token,
                 TextSendMessage(text=ret_))
+    if event.message.text == "topnews":
+        r = requests.get("https://newsapi.org/v2/top-headlines?country=id&apiKey=8d44c7b77f75486aa857a149d6e4337b")
+        data=r.text
+        data=json.loads(data)            
+        if data["articles"] != []:
+            no = 0
+            hasil = "「 Top News 」\n"
+            for news in data["articles"]:
+                    no += 1
+                    hasil += "\n" + str(no) + ". " + str(news["title"]) + "\nAuthor: " + str(news["author"]) + "\nDeskripsi: " + str(news["description"]) + "\nLink: " + str(news["url"])
+                    hasil += "\n"
+            line_bot_api.reply_message(
+                event.reply_token,
+                TextSendMessage(text=str(hasil)))
     if event.message.text == "PTT 表特版 近期大於 10 推的文章":
         content = ptt_beauty()
         line_bot_api.reply_message(
