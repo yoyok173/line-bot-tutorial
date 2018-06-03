@@ -344,7 +344,7 @@ def handle_message(event):
         with requests.session() as web:
             web.headers["User-Agent"] = 'Mozilla/5.0'
             r = web.get("https://www.youtube.com/results", params = params)
-            soup = BeautifulSoup(r.content, "html5lib")
+            soup = BeautifulSoup(r.content, "html.parser")
             ret_ = "╔══[ Youtube Result ]"
             datas = []
             for data in soup.select(".yt-lockup-title > a[title]"):
