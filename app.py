@@ -337,6 +337,27 @@ def handle_message(event):
             line_bot_api.reply_message(
                 event.reply_token,
                 TextSendMessage(text=ret_))
+    if event.message.text in (".youtube "):
+        sep = text.split(" ")
+        search = text.replace(sep[0] + " ","")
+        params = {"search_query": search}
+        with requests.session() as web:
+            web.headers["User-Agent"] = 'Mozilla/5.0'
+            r = web.get("https://www.youtube.com/results", params = params)
+            soup = BeautifulSoup(r.content, "html5lib")
+            ret_ = "╔══[ Youtube Result ]"
+            datas = []
+            for data in soup.select(".yt-lockup-title > a[title]"):
+                if "&lists" not in data["href"]:
+                    datas.append(data)
+            for data in datas:
+                ret_ += "\n╠══[ {} ]".format(str(data["title"]))
+                ret_ += "\n╠ https://www.youtube.com{}".format(str(data["href"]))
+            ret_ += "\n╚══[ Total {} ]".format(len(datas))
+            line_bot_api.reply_message(
+                event.reply_token,
+                TextSendMessage(text=str(ret_)))
+            return 0
     if event.message.text == "topnews":
         r = requests.get("https://newsapi.org/v2/top-headlines?country=id&apiKey=8d44c7b77f75486aa857a149d6e4337b")
         data=r.text
