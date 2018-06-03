@@ -382,7 +382,7 @@ def handle_message(event):
             event.reply_token,
             TextSendMessage(text=content))
         return 0
-    if event.message.text == "menu","Menu":
+    if event.message.text in ('menu','Menu'):
         buttons_template = TemplateSendMessage(
             alt_text='Daftar menu',
             template=ButtonsTemplate(
