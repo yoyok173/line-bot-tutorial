@@ -367,23 +367,6 @@ def handle_message(event):
             event.reply_token,
             TextSendMessage(text=content))
         return 0
-    if event.message.text == 'id':
-		line_bot_api.reply_message(
-			event.reply_token, [
-				TextSendMessage(
-					text='id: ' + event.source.user_id
-				)
-			]
-		)
-    if event.message.text in ('hi','Hi','HI','hello','你好','哈囉','嗨'):
-		profile = line_bot_api.get_profile(event.source.user_id)
-		line_bot_api.reply_message(
-			event.reply_token, [
-				TextSendMessage(
-					text='Hi hi ' + profile.display_name + '\n' + '輸入"menu"來玩吧！\n( ━☞´◔‿ゝ◔`)━☞'
-				)
-			]
-		)
     if event.message.text == "PanX泛科技":
         content = panx()
         line_bot_api.reply_message(
