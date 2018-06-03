@@ -311,7 +311,17 @@ def handle_message(event):
                 )
             ]
         )
-        return 0	
+        return 0
+    if event.message.text in ('hi','Hi'):
+		profile = line_bot_api.get_profile(event.source.user_id)
+		line_bot_api.reply_message(
+			event.reply_token, [
+				TextSendMessage(
+					text='Hi hi ' + profile.display_name
+				)
+			]
+		)		
+
     if event.message.text == "PTT 表特版 近期大於 10 推的文章":
         content = ptt_beauty()
         line_bot_api.reply_message(
