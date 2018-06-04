@@ -312,9 +312,8 @@ def handle_message(event):
             ]
         )
         return 0
-    if event.message.text == "隨便來張正妹圖片":
-        image = requests.get(API_Get_Image)
-        url = image.json().get('Url')
+    if event.message.text == "test":
+        url = 'https://winpoin.com/wp-content/uploads/2013/04/windows-rename_04.jpeg'
         image_message = ImageSendMessage(
             original_content_url=url,
             preview_image_url=url
