@@ -93,9 +93,9 @@ def handle_message(event):
             line_bot_api.reply_message(
                 event.reply_token,
                 TextSendMessage(result))
-            line_bot_api.reply_message(
-                event.reply_token, image_message)
-            return 0
+            #line_bot_api.reply_message(
+            #    event.reply_token, image_message)
+            #return 0
 
 @handler.add(MessageEvent, message=StickerMessage)
 def handle_sticker_message(event):
