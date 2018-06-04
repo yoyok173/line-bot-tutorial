@@ -80,18 +80,18 @@ def handle_message(event):
             event.reply_token, image_message)
         return 0
     if event.message.text == '/profilku':
-		if isinstance(event.source, SourceGroup):
-			try:
-				profile = line_bot_api.get_group_member_profile(event.source.group_id, event.source.user_id)
-				result = ("Display name: " + profile.display_name + "\n" +
-						  "Profile picture: " + profile.picture_url + "\n" +
-						  "User_ID: " + profile.user_id)
-			except LineBotApiError:
-				pass	
-			line_bot_api.reply_message(
-				event.reply_token,
-				TextSendMessage(result))
-			return 0
+        if isinstance(event.source, SourceGroup):
+            try:
+                profile = line_bot_api.get_group_member_profile(event.source.group_id, event.source.user_id)
+                result = ("Display name: " + profile.display_name + "\n" +
+                          "Profile picture: " + profile.picture_url + "\n" +
+                          "User_ID: " + profile.user_id)
+            except LineBotApiError:
+                pass    
+            line_bot_api.reply_message(
+                event.reply_token,
+                TextSendMessage(result))
+            return 0
 
 @handler.add(MessageEvent, message=StickerMessage)
 def handle_sticker_message(event):
