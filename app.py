@@ -86,7 +86,6 @@ def handle_message(event):
                     "User_ID: " + profile.user_id + "\n" +
                     "Status: "+ str(profile.status_message))
             url = profile.picture_url
-            )
             line_bot_api.reply_message(
                 event.reply_token,
                 ImageSendMessage(
