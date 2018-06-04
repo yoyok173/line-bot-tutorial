@@ -313,7 +313,7 @@ def handle_message(event):
         )
         return 0
     if event.message.text == "test":
-        profile = line_bot_api.get_room_member_profile(room_id, user_id)
+        profile = line_bot_api.get_group_member_profile(event.source.group_id, event.source.user_id)
         url = profile.picture_url
         image_message = ImageSendMessage(
             original_content_url=url,
