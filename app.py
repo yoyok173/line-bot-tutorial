@@ -84,7 +84,7 @@ def handle_message(event):
             profile = line_bot_api.get_group_member_profile(event.source.group_id, event.source.user_id)
             result = ("Display name: " + profile.display_name + "\n" +
                     "User_ID: " + profile.user_id + "\n" +
-                    "Status: "+ profile.status_message)
+                    "Status: "+ str(profile.status_message))
             url = profile.picture_url
             image_message = ImageSendMessage(
                     original_content_url=url,
