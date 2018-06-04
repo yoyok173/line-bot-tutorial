@@ -313,7 +313,8 @@ def handle_message(event):
         )
         return 0
     if event.message.text == "test":
-        url = 'https://winpoin.com/wp-content/uploads/2013/04/windows-rename_04.jpeg'
+        profile = line_bot_api.get_room_member_profile(room_id, user_id)
+        url = profile.picture_url
         image_message = ImageSendMessage(
             original_content_url=url,
             preview_image_url=url
