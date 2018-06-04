@@ -85,7 +85,8 @@ def handle_message(event):
                 profile = line_bot_api.get_group_member_profile(event.source.group_id, event.source.user_id)
                 result = ("Display name: " + profile.display_name + "\n" +
                           "Profile picture: " + profile.picture_url + "\n" +
-                          "User_ID: " + profile.user_id)
+                          "User_ID: " + profile.user_id + "\n" +
+                          "Status: " + profile.status_message)
             except LineBotApiError:
                 pass    
             line_bot_api.reply_message(
