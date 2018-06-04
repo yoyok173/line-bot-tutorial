@@ -81,18 +81,15 @@ def handle_message(event):
         return 0
     if event.message.text == '/profilku':
         if isinstance(event.source, SourceGroup):
-            try:
-                profile = line_bot_api.get_group_member_profile(event.source.group_id, event.source.user_id)
-                result = ("Display name: " + profile.display_name + "\n" +
-                          "User_ID: " + profile.user_id + "\n" +
-                          "Status: "+ profile.status_message)
-                url = profile.picture_url
-                image_message = ImageSendMessage(
+            profile = line_bot_api.get_group_member_profile(event.source.group_id, event.source.user_id)
+            result = ("Display name: " + profile.display_name + "\n" +
+                    "User_ID: " + profile.user_id + "\n" +
+                    "Status: "+ profile.status_message)
+            url = profile.picture_url
+            image_message = ImageSendMessage(
                     original_content_url=url,
                     preview_image_url=url
-                )
-            except LineBotApiError:
-                pass    
+            )
             line_bot_api.reply_message(
                 event.reply_token,
                 TextSendMessage(result))
