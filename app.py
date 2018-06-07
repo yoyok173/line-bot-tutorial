@@ -222,6 +222,7 @@ def urban(keyword, ex=True):
 def handle_message(event):
     print("event.reply_token:", event.reply_token)
     print("event.message.text:", event.message.text)
+    text=event.message.text
     if event.message.text == 'id':
         line_bot_api.reply_message(
             event.reply_token, [
