@@ -508,7 +508,7 @@ def handle_message(event):
             best = video.getbest(preftype="mp4")
             s = best.url
             video_message = VideoSendMessage(
-                   original_content_url=s,
+                   original_content_url='https://r5---sn-p5qlsnsr.googlevideo.com/videoplayback?expire=1528376375&fvip=5&itag=18&sparams=clen%2Cdur%2Cei%2Cgir%2Cid%2Cip%2Cipbits%2Citag%2Clmt%2Cmime%2Cmm%2Cmn%2Cms%2Cmv%2Cpl%2Cratebypass%2Crequiressl%2Csource%2Cexpire&beids=%5B23742912%5D&source=youtube&mime=video%2Fmp4&requiressl=yes&signature=1845D76D14E028A19D802A28D6B66C7D4D1D8E25.86D635BF99B7384D4EFE5F5D96435C36473AEAFE&pl=20&c=WEB&ratebypass=yes&id=o-AGmCzcAEp56T6-w6O50h7o_IVqxmBHxigCKm509Xmu5l&ei=19cYW4-uGImigwPbobSwAQ&ipbits=0&ip=54.197.190.107&key=yt6&clen=17249927&lmt=1514351986311318&ms=au%2Conr&mv=u&mt=1528354575&dur=265.775&mn=sn-p5qlsnsr%2Csn-vgqskn7e&mm=31%2C26&gir=yes',
                    preview_image_url=video.thumb
             )
             #line_bot_api.reply_message(
