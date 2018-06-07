@@ -507,15 +507,15 @@ def handle_message(event):
             video = pafy.new(isi[0])
             best = video.getbest(preftype="mp4")
             s = best.url
-            #video_message = VideoSendMessage(
-                #   original_content_url=url,
-                #   preview_image_url=video.thumb
-            #)
-            line_bot_api.reply_message(
-                event.reply_token,
-                TextSendMessage(isi[0]))
+            video_message = VideoSendMessage(
+                   original_content_url=s,
+                   preview_image_url=video.thumb
+            )
             #line_bot_api.reply_message(
-            #   event.reply_token, video_message)
+            #    event.reply_token,
+            #    TextSendMessage(isi[0]))
+            line_bot_api.reply_message(
+               event.reply_token, video_message)
 
 #@handler.add(MessageEvent, message=StickerMessage)
 #def handle_sticker_message(event):
