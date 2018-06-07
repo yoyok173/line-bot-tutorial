@@ -21,3 +21,10 @@ line-bot-sdk
 imgurpython==1.1.7
 html5lib
 pytz
+kbbi
+urbandictionary_top
+argparse
+pafy
+youtube-dl
+googletrans
+wikipedia
