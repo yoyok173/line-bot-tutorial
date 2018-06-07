@@ -520,6 +520,16 @@ def handle_message(event):
 #        event.reply_token,
 #        sticker_message)
 
+@handler.add(JoinEvent)
+def handle_join(event):
+	line_bot_api.reply_message(
+		event.reply_token,
+		TextSendMessage(text='Hi, my name is Shin Chan. Hope we can make some fun in this ' + event.source.type))
+		
+@handler.add(LeaveEvent)
+def handle_leave():
+	app.logger.info("Bye")
+
 @handler.add(PostbackEvent)
 def handle_postback(event):
     if event.postback.data == 'update':
