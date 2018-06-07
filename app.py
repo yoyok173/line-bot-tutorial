@@ -1,9 +1,13 @@
-import requests
+import requests, pafy, wikipedia
 import re, json, urllib, urllib.parse, pytz
 import random
 import time
+from kbbi import KBBI
+from argparse import ArgumentParser
 from time import sleep
 import configparser
+from urbandictionary_top import udtop
+from googletrans import Translator
 from bs4 import BeautifulSoup
 from flask import Flask, request, abort
 from imgurpython import ImgurClient
